@@ -12,7 +12,7 @@
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 
     <!--
-      TODO: Add a script tag to hold the Handlebars template.
+      DONE: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
         - Move your old template structure to here. Remember that this template needs to have the same structure as the old one!
         - Insert placeholder keys.
@@ -53,7 +53,24 @@
             </li>
           </ul>
         </div>
+
+        <script id="article-template" type="text/template">
+          <article data-category="{{category}}">
+            <header>
+              <h1>{{title}}</h1>
+              <div> 
+                By <address><a href="{{authorUrl}}">{{author}}</a></address>
+                published <time datetime="2000-01-01">Publish Time</time>
+              </div>  
+            </hearder>  
+            <section class="article-body">{{{body}}}</section>
+            <a href="#" class="read-on">Read on &rarr;</a>   
+          </article>    
+        </script>
+
+        <div id="article-placeholder" ></div>
       </section>
+      
       <section id="about" class="tab-content">
         <header>
           Welcome to my Blog
@@ -78,18 +95,6 @@
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
-    <script id="article-template" type="text/template">
-        <article data-category="{{category}}">
-          <header>
-            <h1>{{title}}</h1>
-            <div> 
-              By <address><a href="{{authorUrl}}">{{author}}</a></address>
-              published <time datetime="2000-01-01">Publish Time</time>
-            </div>  
-          </hearder>  
-          <section class="article-body">{{body}}</section>
-          <a href="#" class="read-on">Read on &rarr;</a>   
-        </article>    
-    </script>
+   
   </body>
 </html>
